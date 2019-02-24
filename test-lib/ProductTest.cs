@@ -1,18 +1,19 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FluentAssertions;
+using System;
 using AutoFixture;
+using FluentAssertions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SampleTDD.Product;
-using ProductService;
 
 namespace SampleTest
 {
     [TestClass]
-    public class ProductSearchTest
+    public class ProductTest
     {
         [TestMethod]
-        public void sut_should_implement_interface()
+        public void constructor_should_makes_correctly()
         {
-            typeof(ProductSearch).Should().Implement<IProductSearch>();
+            var sut = new Product();
+            sut.Id.Should().NotBe(Guid.Empty);
         }
     }
 }

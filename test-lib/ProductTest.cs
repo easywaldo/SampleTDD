@@ -2,23 +2,17 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FluentAssertions;
 using AutoFixture;
 using SampleTDD.Product;
+using ProductService;
 
 namespace SampleTest
 {
     [TestClass]
-    public class UnitTest1
+    public class ProductSearchTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void sut_should_implement_interface()
         {
-            // Arrange
-            var builder = new Fixture();
-
-            // Act
-            var sut = builder.Create<Product>();
-
-            // Assert
-            sut.Should().BeOfType<Product>();
+            typeof(ProductSearch).Should().Implement<IProductSearch>();
         }
     }
 }

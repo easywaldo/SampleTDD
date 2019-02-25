@@ -6,7 +6,13 @@ namespace ProductService
 {
     public class ProductSearch : IProductSearch
     {
-        public IEnumerable<Product> GetProducts(List<int> ids)
+        private IList<Product> _products = null;
+        public ProductSearch(IList<Product> products)
+        {
+            _products = products;
+        }
+
+        public IEnumerable<Product> GetProducts(List<Guid> ids)
         {
             throw new NotImplementedException();
         }

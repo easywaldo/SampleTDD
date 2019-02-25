@@ -15,5 +15,11 @@ namespace SampleTest
             var sut = new Product();
             sut.Id.Should().NotBe(Guid.Empty);
         }
+
+        [TestMethod]
+        public void sut_has_name_property()
+        {
+            typeof(Product).Should().HaveProperty(typeof(string), "Name");
+        }
     }
 }

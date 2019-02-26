@@ -7,6 +7,6 @@ namespace ProductService
 {
     public interface IProductSearch
     {
-        IEnumerable<Product> GetProducts(List<Guid> ids);
+        IEnumerable<Product> GetProductList(List<string> ids);
     }
 }

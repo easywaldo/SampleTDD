@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using SampleTDD.Product;
 
 namespace ProductService
@@ -12,9 +13,9 @@ namespace ProductService
             _products = products;
         }
 
-        public IEnumerable<Product> GetProducts(List<Guid> ids)
+        public IEnumerable<Product> GetProductList(List<string> ids)
         {
-            throw new NotImplementedException();
+            return _products.Where(x => ids.Contains(x.Name)).ToList();
         }
     }
 }

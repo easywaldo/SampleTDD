@@ -5,6 +5,7 @@ using SampleTDD.Product;
 using ProductService;
 using System.Collections.Generic;
 using System;
+using System.Linq;
 
 namespace SampleTest
 {
@@ -22,9 +23,9 @@ namespace SampleTest
         {
             // Arrange
             var builder = new Fixture();
-            var expectedId = Guid.NewGuid();
+            var expectedName = builder.Create<string>();
             var product = builder.Build<Product>()
-                .With(x => x.Id, expectedId)
+                .With(x => x.Name, expectedName)
                 .Create();
             var unExpected = builder.Create<Product>();
             var productList = new List<Product>
@@ -35,10 +36,12 @@ namespace SampleTest
             var sut = new ProductSearch(productList);
 
             // Act
-            var actual = sut.GetProducts(new List<Guid> { expectedId });
+            var actual = sut.GetProductList(new List<string> { expectedName });
 
             // Assert
             actual.Should().NotBeNullOrEmpty();
+            actual.Should().HaveCount(1);
+            actual.First().Name.Should().Be(expectedName);
         }
     }
 }

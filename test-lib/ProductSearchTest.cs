@@ -6,6 +6,8 @@ using ProductService;
 using System.Collections.Generic;
 using System;
 using System.Linq;
+using AutoFixture.NUnit3;
+using NUnit.Framework;
 
 namespace SampleTest
 {
@@ -19,11 +21,13 @@ namespace SampleTest
         }
 
         [TestMethod]
-        public void sut_should_takes_product_correctly()
+        [DataRow("john")]
+        [DataRow("willy")]
+        public void sut_should_takes_product_correctly(
+            string expectedName)
         {
             // Arrange
             var builder = new Fixture();
-            var expectedName = builder.Create<string>();
             var product = builder.Build<Product>()
                 .With(x => x.Name, expectedName)
                 .Create();

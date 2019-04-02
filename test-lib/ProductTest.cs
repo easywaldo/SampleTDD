@@ -21,5 +21,11 @@ namespace SampleTest
         {
             typeof(Product).Should().HaveProperty(typeof(string), "Name");
         }
+
+        [TestMethod]
+        public void sut_has_discount_rate_property()
+        {
+            typeof(Product).Should().HaveProperty(typeof(int), "DiscountRate");
+        }
     }
 }

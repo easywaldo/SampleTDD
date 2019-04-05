@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{397C5589-11A5-42E0-B1EB-418936EFDC43}|단위 테스트">
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SampleTDD" expanded="True">
+            <Node name="Product" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+            </Node>
+            <Node name="ProductService" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+            </Node>
+            <Node name="test-lib" expanded="True" selected="True">
+              <Node name="Dependencies" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.test-lib PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

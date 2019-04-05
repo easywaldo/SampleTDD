@@ -13,7 +13,8 @@ namespace SampleTest {
     [TestClass]
     public class ProductSearchTest {
         [TestMethod]
-        public void sut_should_implement_interface () {
+        public void sut_should_implement_interface () 
+        {
             typeof (ProductSearch).Should ().Implement<IProductSearch> ();
         }
 
@@ -43,8 +44,13 @@ namespace SampleTest {
             actual.First ().Name.Should ().Be (expectedName);
         }
 
+        [DataRow(-10, 50)]
+        [DataRow(30, 200)]
         [TestMethod]
-        public void given_discount_rates_is_out_of_range_then_sut_should_throws_exceptions () {
+        public void given_discount_rates_is_out_of_range_then_sut_should_throws_exceptions (
+            int startPos,
+            int endPos) 
+        {
             // Arrange
             var builder = new Fixture ();
             var productList = builder.CreateMany<Product> (10);
@@ -55,8 +61,6 @@ namespace SampleTest {
 
             // Assert
             action.Should().Throw<ArgumentException>();
-            
-
         }
     }
 }
